@@ -1,5 +1,5 @@
-export type ProductsSortOption = "default" | "title-asc" | "title-desc" | "price-asc" | "price-desc";
-// TODO add ENUM maybe
+import type { ProductsSortOption } from "../../types/sort";
+import { PRODUCTS_SORT_LABELS, PRODUCTS_SORT_OPTIONS } from "../../types/sort";
 
 type ProductsSortProps = {
   selectedOption: ProductsSortOption;
@@ -8,7 +8,6 @@ type ProductsSortProps = {
 
 export default function ProductsSort({ selectedOption, onOptionChange }: ProductsSortProps) {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(event.target.value)
     onOptionChange(event.target.value as ProductsSortOption);
   };
 
@@ -17,12 +16,11 @@ export default function ProductsSort({ selectedOption, onOptionChange }: Product
       <label>
         Sortuj według:{" "}
         <select value={selectedOption} onChange={handleChange}>
-            {/* change that options to loop */}
-          <option value="default">Domyślnie</option>
-          <option value="title-asc">Tytuł A→Z</option>
-          <option value="title-desc">Tytuł Z→A</option>
-          <option value="price-asc">Cena rosnąco</option>
-          <option value="price-desc">Cena malejąco</option>
+          {PRODUCTS_SORT_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {PRODUCTS_SORT_LABELS[option]}
+            </option>
+          ))}
         </select>
       </label>
     </section>
