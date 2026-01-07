@@ -4,6 +4,7 @@ import { fetchProducts } from "../api/products";
 import ProductsSort from "../components/products/ProductsSort";
 import type { ProductsSortOption } from "../types/sort";
 import { sortProducts } from "../helpers/products";
+import ProductsList from "../components/products/ProductsList";
 
 
 export default function ProductsPage() {
@@ -46,15 +47,7 @@ export default function ProductsPage() {
       <ProductsSort selectedOption={sortBy} onOptionChange={handleSortChange}/>
 
       <div className="products-container">
-        {!isLoading && !error && sortedProducts.map((product) => (
-          <div key={product.id} className="product-card">
-            <img src={product.image} alt={product.title} className="product-image" />
-            <h2>{product.title}</h2>
-            <p>{product.price}</p>
-            <p>{product.category}</p>
-            <p>Ocena: {product.rating.rate} ({product.rating.count} Opini)</p>
-          </div>
-        ))}
+      {!isLoading && !error && <ProductsList products={sortedProducts}/>}
       </div>
     </main>
   );
