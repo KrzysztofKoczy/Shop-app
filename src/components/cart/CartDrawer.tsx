@@ -33,28 +33,6 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     </li>
                 ))}
             </ul>
-            // <ul className="cart-items-list">
-            //   {items.map((item) => (
-            //     <li key={item.product.id} className="cart-item">
-            //       <img 
-            //         src={item.product.image} 
-            //         alt={item.product.title} 
-            //         className="cart-item-image"
-            //       />
-            //       <div className="cart-item-info">
-            //         <h3>{item.product.title}</h3>
-            //         <p>Cena: {item.product.price} zł</p>
-            //         <p>Ilość: {item.quantity}</p>
-            //       </div>
-            //       <button 
-            //         className="cart-item-remove"
-            //         onClick={() => removeFromCart(item.product.id)}
-            //       >
-            //         Usuń
-            //       </button>
-            //     </li>
-            //   ))}
-            // </ul>
           )}
         </div>
       </div>

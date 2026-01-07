@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Navigation from "./components/Navigation";
+import { ProductProvider } from "./context/ProductContext";
 
 const rootElement = document.getElementById("root");
 
@@ -17,6 +18,7 @@ if (!rootElement) {
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <CartProvider>
+      <ProductProvider>
       <BrowserRouter>
         <Navigation />
         <Routes>
@@ -25,6 +27,7 @@ ReactDOM.createRoot(rootElement).render(
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
+      </ProductProvider>
     </CartProvider>
   </React.StrictMode>
 );

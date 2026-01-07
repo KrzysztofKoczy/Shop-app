@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import type { Product } from "../api/products";
-import { fetchProducts } from "../api/products";
+import { useProduct } from "../context/ProductContext";
+import { useMemo, useState } from "react";
 import ProductsSort from "../components/products/ProductsSort";
 import type { ProductsSortOption } from "../types/sort";
 import { sortProducts } from "../helpers/products";
@@ -8,26 +7,9 @@ import ProductsList from "../components/products/ProductsList";
 
 
 export default function ProductsPage() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { products, isLoading, error } = useProduct();
   const [sortBy, setSortBy] = useState<ProductsSortOption>("default");
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    setIsLoading(true);
-
-    fetchProducts()
-      .then((data) => {
-        setProducts(data);
-        setError(null);
-      })
-      .catch((error) => {
-        setError("Nie udało się pobrać produktów")
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
 
   function handleSortChange(value: ProductsSortOption) {
     setSortBy(value);
