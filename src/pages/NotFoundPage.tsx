@@ -5,7 +5,7 @@ export default function NotFoundPage() {
     <main>
       <h1>404 - Strona nie znaleziona</h1>
       <p>
-        <Link to="/">Wróć na stronę główną</Link>
+        <Link to="/home">Wróć na stronę główną</Link>
       </p>
     </main>
   );

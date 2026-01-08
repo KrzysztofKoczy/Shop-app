@@ -22,7 +22,7 @@ ReactDOM.createRoot(rootElement).render(
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -9,7 +9,7 @@ export default function Navigation() {
   return (
     <nav className="navigation">
       <div className="navigation-links">
-        <NavLink to='/' end>Home</NavLink>
+        <NavLink to='/home'>Home</NavLink>
         <NavLink to='/products'>Products</NavLink>
       </div>
       
