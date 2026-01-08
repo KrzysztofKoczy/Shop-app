@@ -34,7 +34,7 @@ describe('ProductItem', () => {
 
     renderWithProvider(mockProduct);
 
-    const incrementButton = screen.getByRole('button', { name: '+' });
+    const incrementButton = screen.getByRole('button', { name: /increment quantity/i });
     const quantityDisplay = screen.getByText('0');
 
     await user.click(incrementButton);
@@ -49,8 +49,8 @@ describe('ProductItem', () => {
     const user = userEvent.setup();
     renderWithProvider(mockProduct);
 
-    const incrementButton = screen.getByRole('button', { name: '+' });
-    const decrementButton = screen.getByRole('button', { name: '-' });
+    const incrementButton = screen.getByRole('button', { name: /increment quantity/i });
+    const decrementButton = screen.getByRole('button', { name: /decrement quantity/i });
     const quantityDisplay = screen.getByText('0');
 
     await user.click(incrementButton);
@@ -68,7 +68,7 @@ describe('ProductItem', () => {
     const user = userEvent.setup();
     renderWithProvider(mockProduct);
 
-    const decrementButton = screen.getByRole('button', { name: '-' });
+    const decrementButton = screen.getByRole('button', { name: /decrement quantity/i });
     const quantityDisplay = screen.getByText('0');
 
     await user.click(decrementButton);
@@ -89,7 +89,7 @@ describe('ProductItem', () => {
     
     renderWithProvider(mockProduct);
 
-    const incrementButton = screen.getByRole('button', { name: '+' });
+    const incrementButton = screen.getByRole('button', { name: /increment quantity/i });
     const addButton = screen.getByRole('button', { name: 'Add to basket' });
 
     expect(addButton).toBeDisabled();
@@ -104,7 +104,7 @@ describe('ProductItem', () => {
 
     renderWithProvider(mockProduct);
 
-    const incrementButton = screen.getByRole('button', { name: '+' });
+    const incrementButton = screen.getByRole('button', { name: /increment quantity/i });
     const addButton = screen.getByRole('button', { name: 'Add to basket' });
     const quantityDisplay = screen.getByText('0');
 
