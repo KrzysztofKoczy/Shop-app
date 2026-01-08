@@ -19,7 +19,7 @@ ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <CartProvider>
       <ProductProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/Shop-app">
         <Navigation />
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
