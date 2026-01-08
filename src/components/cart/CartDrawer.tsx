@@ -7,6 +7,7 @@ type CartDrawerProps = {
 
 export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { items, removeFromCart } = useCart();
+  const { updateQuantity } = useCart();
 
   if (!isOpen) return null;
 
@@ -32,9 +33,12 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     className="cart-item-image"/>
                 <div className="cart-item-info">
                   <p>{item.product.title}</p>
-                  <p>Ilość: {item.quantity}</p>
+                  <div className="product-bottom-section ">
+                    <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)}>+</button>
+                  </div>
                 </div>
-          
                 <button className="cart-item-remove" onClick={() => removeFromCart(item.product.id)}>
                   Usuń
                 </button>

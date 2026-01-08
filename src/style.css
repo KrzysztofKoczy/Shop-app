@@ -244,11 +244,11 @@ select:hover {
 
 .cart-item-info {
   flex: 1;
-}
-
-.cart-item-info p {
-  margin: 0;
-  font-size: 12px;
+  
+  span {
+    margin: 0;
+    font-size: 12px;
+  }
 }
 
 .cart-item-remove {

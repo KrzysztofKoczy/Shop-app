@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { fetchProducts, type Product } from "../api/products";
+import type { Product } from "../types/product";
+import { fetchProducts } from "../api/products";
 
 type ProductContextType = {
     products: Product[];
