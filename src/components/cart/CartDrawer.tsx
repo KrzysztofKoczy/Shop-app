@@ -1,5 +1,6 @@
 import { useCart } from "../../context/CartContext";
 
+
 type CartDrawerProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -12,23 +13,17 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
   return (
     <>
-      <div className="cart-drawer-overlay" onClick={onClose}></div>
+      <div className="cart-drawer-overlay"></div>
       
       <div className="cart-drawer">
         <div className="cart-drawer-header">
-          <h2>Koszyk</h2>
-          <button 
-            className="cart-drawer-close" 
-            onClick={onClose}
-            aria-label="Zamknij koszyk"
-          >
-            ✕
-          </button>
+          <h2>Basket</h2>
+          <button className="cart-drawer-close" aria-label="Close cart drawer" onClick={onClose}>✕</button>
         </div>
         
         <div className="cart-drawer-content">
           {items.length === 0 ? (
-            <p>Twój koszyk jest pusty</p>
+            <p>Your basket is empty</p>
           ) : (
             <ul className="cart-items-list">
             {items.map((item) => (
@@ -39,13 +34,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 <div className="cart-item-info">
                   <p>{item.product.title}</p>
                   <div className="product-bottom-section ">
-                    <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)}>-</button>
+                    <button aria-label="Decrement quantity" onClick={() => updateQuantity(item.product.id, item.quantity - 1)}>-</button>
                     <span>{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)}>+</button>
+                    <button aria-label="Increment quantity" onClick={() => updateQuantity(item.product.id, item.quantity + 1)}>+</button>
                   </div>
                 </div>
-                <button className="cart-item-remove" onClick={() => removeFromCart(item.product.id)}>
-                  Usuń
+                <button className="cart-item-remove" aria-label="Remove item" onClick={() => removeFromCart(item.product.id)}>
+                  Remove
                 </button>
               </li>
             ))}

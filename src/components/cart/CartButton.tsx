@@ -8,7 +8,7 @@ export default function CartButton({ openCart } : CartButtonProps) {
     const { getTotalItems } = useCart();
 
     return (
-        <button className="cart-button" aria-label="Koszyk" onClick={openCart}>
+        <button className="cart-button" aria-label="Basket" onClick={openCart}>
           <div className="icon-wrapper">
           <svg viewBox="0 0 24 24"
               className="icon"
@@ -20,7 +20,7 @@ export default function CartButton({ openCart } : CartButtonProps) {
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
           </div>
-          <span className="badge">
+          <span className="badge" aria-label="Total items in basket">
             {getTotalItems}
           </span>
         </button>

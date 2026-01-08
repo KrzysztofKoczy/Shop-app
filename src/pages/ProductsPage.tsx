@@ -19,7 +19,7 @@ export default function ProductsPage() {
     <main>
       <h1>Products</h1>
 
-      {isLoading && <p>Trwa ładowanie produktów...</p>}
+      {isLoading && <p>Loading products...</p>}
 
       {error && <p>{error}</p>}
 

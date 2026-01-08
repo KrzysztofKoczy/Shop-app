@@ -15,10 +15,10 @@ export default function ProductsSort({ selectedOption, disabled, onOptionChange 
   return (
     <section>
       <label>
-        Sortuj według:{" "}
-        <select disabled={disabled} value={selectedOption} onChange={handleChange}>
+        Sort by:{" "}
+        <select aria-label="Sort products" disabled={disabled} value={selectedOption} onChange={handleChange}>
           {PRODUCTS_SORT_OPTIONS.map((option) => (
-            <option key={option} value={option}>
+            <option aria-label={PRODUCTS_SORT_LABELS[option]} key={option} value={option}>
               {PRODUCTS_SORT_LABELS[option]}
             </option>
           ))}

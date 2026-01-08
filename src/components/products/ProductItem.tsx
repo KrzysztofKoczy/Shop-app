@@ -31,15 +31,15 @@ export default function ProductItem({ product }: ProductItem) {
       <h2>{product.title}</h2>
       <p>{product.price}</p>
       <p>{product.category}</p>
-      <p>Ocena: {product.rating.rate} ({product.rating.count} Opini)</p>
+      <p>Rating: {product.rating.rate} ({product.rating.count} Reviews)</p>
       <div>
         <div className="product-bottom-section">
-          <button onClick={handleDecrement}>-</button>
+          <button aria-label="Decrement quantity" onClick={handleDecrement}>-</button>
           <span>{quantity}</span>
-          <button onClick={handleIncrement}>+</button>
+          <button aria-label="Increment quantity" onClick={handleIncrement}>+</button>
         </div>
-        <button onClick={handleAddToCart} disabled={quantity === 0}>
-          Dodaj do koszyka
+        <button aria-label="Add to basket" onClick={handleAddToCart} disabled={quantity === 0}>
+          Add to basket
         </button>
       </div>
 

@@ -34,7 +34,7 @@ describe('CartButton', () => {
     
     renderWithProvider(mockOpenCart);
 
-    const button = screen.getByRole('button', { name: 'Koszyk' });
+    const button = screen.getByRole('button', { name: 'Basket' });
     await user.click(button);
 
     expect(mockOpenCart).toHaveBeenCalledTimes(1);

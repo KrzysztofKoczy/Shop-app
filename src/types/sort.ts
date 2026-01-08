@@ -6,11 +6,11 @@ export type ProductsSortOption =
   | "price-desc";
 
 export const PRODUCTS_SORT_LABELS: Record<ProductsSortOption, string> = {
-  default: "Domyślnie",
-  "title-asc": "Tytuł A→Z",
-  "title-desc": "Tytuł Z→A",
-  "price-asc": "Cena rosnąco",
-  "price-desc": "Cena malejąco",
+  default: "Default",
+  "title-asc": "Title A→Z",
+  "title-desc": "Title Z→A",
+  "price-asc": "Price ascending",
+  "price-desc": "Price descending",
 };
 
 export const PRODUCTS_SORT_OPTIONS: ProductsSortOption[] = [

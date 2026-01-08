@@ -79,7 +79,7 @@ describe('ProductItem', () => {
   it('should disable add to cart button when quantity is 0', () => {
     renderWithProvider(mockProduct);
 
-    const addButton = screen.getByRole('button', { name: 'Dodaj do koszyka' });
+    const addButton = screen.getByRole('button', { name: 'Add to basket' });
 
     expect(addButton).toBeDisabled();
   });
@@ -90,7 +90,7 @@ describe('ProductItem', () => {
     renderWithProvider(mockProduct);
 
     const incrementButton = screen.getByRole('button', { name: '+' });
-    const addButton = screen.getByRole('button', { name: 'Dodaj do koszyka' });
+    const addButton = screen.getByRole('button', { name: 'Add to basket' });
 
     expect(addButton).toBeDisabled();
 
@@ -105,7 +105,7 @@ describe('ProductItem', () => {
     renderWithProvider(mockProduct);
 
     const incrementButton = screen.getByRole('button', { name: '+' });
-    const addButton = screen.getByRole('button', { name: 'Dodaj do koszyka' });
+    const addButton = screen.getByRole('button', { name: 'Add to basket' });
     const quantityDisplay = screen.getByText('0');
 
     await user.click(incrementButton);
