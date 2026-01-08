@@ -2,11 +2,9 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +25,7 @@ a {
 }
 
 a:hover {
-  color: #535bf2;
+  color: #747bff;
 }
 
 body {
@@ -38,26 +36,41 @@ body {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #e0e0e0;
   padding: 0.6em 1.2em;
-  background-color: #1a1a1a;
+  background-color: #f9f9f9;
+  color: #213547;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 
 button:hover {
   border-color: #646cff;
+  background-color: #f0f0f0;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 select {
   border-radius: 4px;
   padding: 4px 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #213547;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 select:hover {
   border-color: #646cff;
+}
+
+select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .products-container {
@@ -70,16 +83,23 @@ select:hover {
 }
 
 .product-item {
-  width: 200px;
+  width: 250px;
   height: auto;
-  font-size: 12px;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 1px solid gray;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
   padding: 8px;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.product-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .product-image {
   width: 64px;
@@ -98,12 +118,19 @@ select:hover {
     align-items: center;
     height: 18px;
     width: auto;
-    font-size: 12px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #213547;
+    border: 1px solid #e0e0e0;
+  }
+  
+  button:hover {
+    background-color: #e8e8e8;
   }
 }
 
 .btn-add-cart {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .navigation {
@@ -111,7 +138,11 @@ select:hover {
   justify-content: space-between;
   align-items: center;
   padding: 8px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navigation-links {
@@ -125,11 +156,12 @@ select:hover {
 }
 
 .navigation-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #f0f0f0;
 }
 
 .navigation-links a.active {
-  background-color: rgba(100, 108, 255, 0.2);
+  background-color: rgba(100, 108, 255, 0.1);
+  color: #646cff;
 }
 
 .home-product {
@@ -137,10 +169,12 @@ select:hover {
   align-items: center;
   flex-direction: column;
   max-width: 250px;
-  border: 1px solid gray;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
   padding: 8px;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cart-button {
@@ -150,14 +184,16 @@ select:hover {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: none;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
+  color: #213547;
 }
   
 .cart-button:hover {
-  background-color: #808080;
+  background-color: #e8e8e8;
 }
   
 .iconwrapper {
@@ -201,12 +237,12 @@ select:hover {
   right: 0;
   width: min(400px, 100%);
   height: 100vh;
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: #ffffff;
+  color: #213547;
   z-index: 1001;
   display: flex;
   flex-direction: column;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
 }
 
 .cart-drawer-header {
@@ -214,7 +250,8 @@ select:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
 }
 
 .cart-drawer-content {
@@ -228,7 +265,7 @@ select:hover {
   align-items: center;
   gap: 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .cart-items-list {
@@ -247,18 +284,18 @@ select:hover {
   
   span {
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 
 .cart-item-remove {
-  background: none;
+  background: #ffffff;
   border: 1px solid #ff4d4f;
   color: #ff4d4f;
   padding: 4px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 14px;
   transition: all 0.2s;
 }
 
