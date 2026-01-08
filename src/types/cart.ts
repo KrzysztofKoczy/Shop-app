@@ -1,4 +1,4 @@
-import type { Product } from "../api/products";
+import type { Product } from "./product";
 
 export type CartItem = {
     product: Product;

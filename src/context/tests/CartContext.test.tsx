@@ -35,7 +35,7 @@ describe('CartContext', () => {
     });
 
     expect(result.current.items).toEqual([]);
-    expect(result.current.getTotalItems()).toBe(0);
+    expect(result.current.getTotalItems).toBe(0);
   });
 
   it('should add product to cart', () => {
@@ -50,7 +50,7 @@ describe('CartContext', () => {
     expect(result.current.items).toHaveLength(1);
     expect(result.current.items[0].product).toEqual(mockProduct1);
     expect(result.current.items[0].quantity).toBe(2);
-    expect(result.current.getTotalItems()).toBe(2);
+    expect(result.current.getTotalItems).toBe(2);
   });
 
   it('should increase quantity when product already exists in cart', () => {
@@ -68,7 +68,7 @@ describe('CartContext', () => {
 
     expect(result.current.items).toHaveLength(1);
     expect(result.current.items[0].quantity).toBe(5);
-    expect(result.current.getTotalItems()).toBe(5);
+    expect(result.current.getTotalItems).toBe(5);
   });
 
   it('should add multiple different products', () => {
@@ -82,7 +82,7 @@ describe('CartContext', () => {
     });
 
     expect(result.current.items).toHaveLength(2);
-    expect(result.current.getTotalItems()).toBe(3);
+    expect(result.current.getTotalItems).toBe(3);
   });
 
   it('should remove product from cart', () => {
@@ -103,7 +103,7 @@ describe('CartContext', () => {
 
     expect(result.current.items).toHaveLength(1);
     expect(result.current.items[0].product.id).toBe(mockProduct2.id);
-    expect(result.current.getTotalItems()).toBe(2);
+    expect(result.current.getTotalItems).toBe(2);
   });
 
   it('should update quantity of product', () => {
@@ -120,7 +120,7 @@ describe('CartContext', () => {
     });
 
     expect(result.current.items[0].quantity).toBe(5);
-    expect(result.current.getTotalItems()).toBe(5);
+    expect(result.current.getTotalItems).toBe(5);
   });
 
   it('should remove product when quantity is set to 0', () => {
@@ -137,7 +137,7 @@ describe('CartContext', () => {
     });
 
     expect(result.current.items).toHaveLength(0);
-    expect(result.current.getTotalItems()).toBe(0);
+    expect(result.current.getTotalItems).toBe(0);
   });
 
   it('should correctly calculate total number of products', () => {
@@ -150,7 +150,7 @@ describe('CartContext', () => {
       result.current.addToCart(mockProduct2, 5);
     });
 
-    expect(result.current.getTotalItems()).toBe(8);
+    expect(result.current.getTotalItems).toBe(8);
   });
 });
 

@@ -21,7 +21,7 @@ export default function CartButton({ openCart } : CartButtonProps) {
             </svg>
           </div>
           <span className="badge">
-            {getTotalItems()}
+            {getTotalItems}
           </span>
         </button>
       );
