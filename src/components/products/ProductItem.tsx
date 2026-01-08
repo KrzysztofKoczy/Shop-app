@@ -38,7 +38,7 @@ export default function ProductItem({ product }: ProductItem) {
           <span>{quantity}</span>
           <button onClick={handleIncrement}>+</button>
         </div>
-        <button className="btn-add-cart" onClick={handleAddToCart} disabled={quantity === 0}>
+        <button onClick={handleAddToCart} disabled={quantity === 0}>
           Dodaj do koszyka
         </button>
       </div>

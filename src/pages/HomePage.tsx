@@ -7,9 +7,9 @@ export default function HomePage() {
   return (
     <main>
       <h1>Home</h1>
-      {/* add random roduct */}
-      {randomProduct && <ProductItem product={randomProduct} />}
-     
+      <div className="home-product">
+        {randomProduct && <ProductItem product={randomProduct} />}
+      </div>
     </main>
   );
 }

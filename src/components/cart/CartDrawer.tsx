@@ -25,14 +25,22 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
             <p>Twój koszyk jest pusty</p>
           ) : (
             <ul className="cart-items-list">
-                {items.map((item) => (
-                    <li key={item.product.id}>
-                        <span>{item.product.title}</span>
-                        <span>{item.quantity}</span>
-                        <button  onClick={ () => removeFromCart(item.product.id)}>Usuń</button>
-                    </li>
-                ))}
-            </ul>
+            {items.map((item) => (
+              <li key={item.product.id} className="cart-item">
+                <img src={item.product.image} 
+                    alt={item.product.title} 
+                    className="cart-item-image"/>
+                <div className="cart-item-info">
+                  <p>{item.product.title}</p>
+                  <p>Ilość: {item.quantity}</p>
+                </div>
+          
+                <button className="cart-item-remove" onClick={() => removeFromCart(item.product.id)}>
+                  Usuń
+                </button>
+              </li>
+            ))}
+          </ul>
           )}
         </div>
       </div>

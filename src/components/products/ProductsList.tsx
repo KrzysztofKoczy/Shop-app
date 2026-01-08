@@ -9,7 +9,7 @@ export default function ProductsList({ products }: ProductsListProps) {
   return (
     <>
       {products.map((product) => (
-        <div key={product.id} className="product-card">
+        <div key={product.id} className="product-item">
           <ProductItem product={product}/>
         </div>
       ))}
