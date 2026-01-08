@@ -6,8 +6,7 @@ type CartDrawerProps = {
 };
 
 export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
-  const { items, removeFromCart } = useCart();
-  const { updateQuantity } = useCart();
+  const { items, removeFromCart, updateQuantity } = useCart();
 
   if (!isOpen) return null;
 
