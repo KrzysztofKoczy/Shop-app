@@ -25,11 +25,10 @@ export default function ProductsPage() {
 
       {error && <p>{error}</p>}
 
-      {/* add disable functionality */}
-      <ProductsSort selectedOption={sortBy} onOptionChange={handleSortChange}/>
+      <ProductsSort selectedOption={sortBy} disabled={isLoading || !!error} onOptionChange={handleSortChange}/>
 
       <div className="products-container">
-      {!isLoading && !error && <ProductsList products={sortedProducts}/>}
+        {!isLoading && !error && <ProductsList products={sortedProducts}/>}
       </div>
     </main>
   );

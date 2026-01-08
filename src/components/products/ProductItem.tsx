@@ -1,6 +1,6 @@
 import { useState } from "react";
-import type { Product } from "../../api/products";
 import { useCart } from "../../context/CartContext";
+import type { Product } from "../../types/product";
 
 type ProductItem = {
     product: Product
@@ -32,14 +32,17 @@ export default function ProductItem({ product }: ProductItem) {
       <p>{product.price}</p>
       <p>{product.category}</p>
       <p>Ocena: {product.rating.rate} ({product.rating.count} Opini)</p>
-      <div className="product-quantity-selector">
-        <span>{quantity}</span>
-        <button onClick={handleDecrement}>-</button>
-        <button onClick={handleIncrement}>+</button>
-        <button onClick={handleAddToCart} disabled={quantity === 0}>
+      <div>
+        <div className="product-bottom-section">
+          <button onClick={handleDecrement}>-</button>
+          <span>{quantity}</span>
+          <button onClick={handleIncrement}>+</button>
+        </div>
+        <button className="btn-add-cart" onClick={handleAddToCart} disabled={quantity === 0}>
           Dodaj do koszyka
         </button>
       </div>
+
     </>
   );
 }

@@ -3,10 +3,11 @@ import { PRODUCTS_SORT_LABELS, PRODUCTS_SORT_OPTIONS } from "../../types/sort";
 
 type ProductsSortProps = {
   selectedOption: ProductsSortOption;
+  disabled: boolean;
   onOptionChange: (value: ProductsSortOption) => void;
 };
 
-export default function ProductsSort({ selectedOption, onOptionChange }: ProductsSortProps) {
+export default function ProductsSort({ selectedOption, disabled, onOptionChange }: ProductsSortProps) {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onOptionChange(event.target.value as ProductsSortOption);
   };
@@ -15,7 +16,7 @@ export default function ProductsSort({ selectedOption, onOptionChange }: Product
     <section>
       <label>
         Sortuj według:{" "}
-        <select value={selectedOption} onChange={handleChange}>
+        <select disabled={disabled} value={selectedOption} onChange={handleChange}>
           {PRODUCTS_SORT_OPTIONS.map((option) => (
             <option key={option} value={option}>
               {PRODUCTS_SORT_LABELS[option]}

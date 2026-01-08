@@ -6,7 +6,7 @@ import { CartProvider } from "./context/CartContext";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/layout/Navigation";
 import { ProductProvider } from "./context/ProductContext";
 
 const rootElement = document.getElementById("root");

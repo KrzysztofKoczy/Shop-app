@@ -1,9 +1,9 @@
-import type { Product } from "../../api/products";
+import type { Product } from "../../types/product";
 import ProductItem from "./ProductItem";
 
 type ProductsListProps = {
-    products: Product[];
-  };
+  products: Product[];
+};
 
 export default function ProductsList({ products }: ProductsListProps) {
   return (

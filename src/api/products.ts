@@ -1,17 +1,4 @@
-export type ProductRating = {
-  rate: number;
-  count: number;
-};
-
-export type Product = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: ProductRating;
-};
+import type { Product } from "../types/product";
 
 const PRODUCTS_API_URL = "https://fakestoreapi.com/products";
 
