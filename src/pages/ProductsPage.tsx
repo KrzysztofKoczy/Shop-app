@@ -5,11 +5,9 @@ import type { ProductsSortOption } from "../types/sort";
 import { sortProducts } from "../helpers/products";
 import ProductsList from "../components/products/ProductsList";
 
-
 export default function ProductsPage() {
   const { products, isLoading, error } = useProduct();
   const [sortBy, setSortBy] = useState<ProductsSortOption>("default");
-
 
   function handleSortChange(value: ProductsSortOption) {
     setSortBy(value);
@@ -27,7 +25,7 @@ export default function ProductsPage() {
 
       <ProductsSort selectedOption={sortBy} disabled={isLoading || !!error} onOptionChange={handleSortChange}/>
 
-      <div>
+      <div className="products-container">
         {!isLoading && !error && <ProductsList products={sortedProducts}/>}
       </div>
     </main>

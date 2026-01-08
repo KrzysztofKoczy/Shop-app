@@ -24,7 +24,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
             setProducts(data);
             setError(null);
           })
-          .catch((error) => {
+          .catch(() => {
             setError("Nie udało się pobrać produktów")
           })
           .finally(() => {
