@@ -1,7 +1,7 @@
 import "./style.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
@@ -22,6 +22,7 @@ ReactDOM.createRoot(rootElement).render(
       <BrowserRouter>
         <Navigation />
         <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="*" element={<NotFoundPage />} />
