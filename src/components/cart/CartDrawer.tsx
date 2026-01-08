@@ -12,12 +12,18 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
   return (
     <>
-      <div className="cart-drawer-overlay"></div>
+      <div className="cart-drawer-overlay" onClick={onClose}></div>
       
       <div className="cart-drawer">
         <div className="cart-drawer-header">
           <h2>Koszyk</h2>
-          <button className="cart-drawer-close" onClick={onClose}>✕</button>
+          <button 
+            className="cart-drawer-close" 
+            onClick={onClose}
+            aria-label="Zamknij koszyk"
+          >
+            ✕
+          </button>
         </div>
         
         <div className="cart-drawer-content">
