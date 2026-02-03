@@ -2,14 +2,20 @@ import type { Product } from "../types/product";
 
 const PRODUCTS_API_URL = "https://fakestoreapi.com/products";
 
-export function fetchProducts(): Promise<Product[]> {
-    return fetch(PRODUCTS_API_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Nie udało się pobrać produktów");
-        }
-        return response.json();
-      })
-      .then((data) => data as Product[]);
-  }
+type ApiProduct = Omit<Product, "price"> & { price: number };
 
+export function fetchProducts(): Promise<Product[]> {
+  return fetch(PRODUCTS_API_URL)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Nie udało się pobrać produktów");
+      }
+      return response.json();
+    })
+    .then((data) =>
+      (data as ApiProduct[]).map((product) => ({
+        ...product,
+        price: Number(product.price.toFixed(2)),
+      }))
+    );
+}

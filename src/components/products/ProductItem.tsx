@@ -29,7 +29,7 @@ export default function ProductItem({ product }: ProductItem) {
     <>
       <img src={product.image} alt={product.title} className="product-image" />
       <h2>{product.title}</h2>
-      <p>{product.price}</p>
+      <p>{product.price.toFixed(2)}</p>
       <p>{product.category}</p>
       <p>Rating: {product.rating.rate} ({product.rating.count} Reviews)</p>
       <div>

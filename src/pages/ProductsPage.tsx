@@ -1,4 +1,4 @@
-import { useProduct } from "../context/ProductContext";
+import { useProducts } from "../hooks/useProducts";
 import { useMemo, useState } from "react";
 import ProductsSort from "../components/products/ProductsSort";
 import type { ProductsSortOption } from "../types/sort";
@@ -6,7 +6,7 @@ import { sortProducts } from "../helpers/products";
 import ProductsList from "../components/products/ProductsList";
 
 export default function ProductsPage() {
-  const { products, isLoading, error } = useProduct();
+  const { products, isLoading, error } = useProducts();
   const [sortBy, setSortBy] = useState<ProductsSortOption>("default");
 
   function handleSortChange(value: ProductsSortOption) {

@@ -1,8 +1,8 @@
 import ProductItem from "../components/products/ProductItem";
-import { useProduct } from "../context/ProductContext";
+import { useProducts } from "../hooks/useProducts";
 
 export default function HomePage() {
-  const { randomProduct } = useProduct();
+  const { randomProduct } = useProducts();
 
   return (
     <main>
